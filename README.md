@@ -27,7 +27,7 @@ http://localhost:8098/admin/
 
 ![Riak_Explorer4](src/imgs/Riak_Explorer4.png)
 
-その後curlを叩くを値が取得できる事が確認できる
+その後curlを叩くと値が取得できる事が確認できる
 
 ```bash
 % curl http://localhost:8098/admin/riak/clusters/default/types/default/buckets/sample/keys/key
