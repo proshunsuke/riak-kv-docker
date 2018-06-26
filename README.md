@@ -9,7 +9,7 @@ Riakを試せるdocker環境
 ## 起動
 
 コンテナを起動する
-```
+```bash
 % docker-compose up -d coordinator 
 ```
 
@@ -29,7 +29,7 @@ http://localhost:8098/admin/
 
 その後curlを叩くを値が取得できる事が確認できる
 
-```shell
+```bash
 % curl http://localhost:8098/admin/riak/clusters/default/types/default/buckets/sample/keys/key
 {"sample-Key":"sample-value"}
 ```
@@ -38,10 +38,23 @@ http://localhost:8098/admin/
 
 以下を実行する
 
-```shell
+```bash
 % curl -v -X PUT http://localhost:8098/riak/favs/db -H "Content-Type: text/html" -d "<html><body><h1>My new favorite DB is RIAK</h1></body></html>"
 ```
 
 ブラウザから http://localhost:8098/riak/favs/db にアクセスする
 
 ![Riak_Explorer5](src/imgs/Riak_Explorer5.png)
+
+## ノードを増やしてみる
+
+以下を実行する
+
+```bash
+% docker-compose scale member=4
+```
+
+coordinatorとは別にmemberノードを4つ増やし、合計5ノードに拡張する
+http://localhost:8098/admin/#/cluster/default/ops を確認すると拡張された様子が確認出来る
+
+![Riak_Explorer6](src/imgs/Riak_Explorer6.png)
