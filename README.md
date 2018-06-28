@@ -1,5 +1,11 @@
 # Riak-kv-docker
 
+## Riakとは
+
+_分散型でデータのレプリケーションが可能で、単一障害点のない拡張型のキーバリューストアである ― 7つのデータベース 7つの世界_
+
+## 概要
+
 Riakを試せるdocker環境
 
 ![Riak_Explorer](src/imgs/Riak_Explorer.png)
